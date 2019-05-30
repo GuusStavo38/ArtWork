@@ -1,0 +1,14 @@
+[run]
+source =
+    src/
+omit =
+    tests/*
+
+[report]
+# fail_under = 80
+exclude_lines =
+    raise NotImplementedError
+show_missing = True
+
+[html]
+directory = coveragedir

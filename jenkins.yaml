@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    some-label: some-label-value
+spec:
+  containers:
+  - name: py35
+    image: gcr.io/crunch-internal-services/jenkins-py35:1.0.3
+    command:
+    - cat
+    tty: true
+    resources:
+      requests:
+        memory: "512"
+        cpu: "400m"
+  - name: py35-light
+    image: gcr.io/crunch-internal-services/jenkins-py35:1.0.3
+    command:
+      - cat
+    tty: true
+    resources:
+      requests:
+        memory: "128"
+        cpu: "100m"
