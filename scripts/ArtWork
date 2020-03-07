@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
-"""
-Example script
-"""
+
+from crunch_etl import run
 
 if __name__ == '__main__':
-    print("Hello world!")
-
+    run(pipelines='ArtWork.pipelines')

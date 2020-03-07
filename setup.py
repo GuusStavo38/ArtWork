@@ -28,6 +28,7 @@ setup(
     packages=find_packages('src'),
     package_dir={'': 'src'},
     install_requires=[
+        'crunch-etl[gcs]==2.5.6'
         # For all version comparisons, look here:
         # https://www.python.org/dev/peps/pep-0440/#version-specifiers
     ],
@@ -39,6 +40,7 @@ setup(
         # $ pip3 install demo[webserver]
     },
     scripts=[
+        'scripts/ArtWork'
         # [OPTIONAL]
         # If you need executable scripts for your application, then you should place them in
         # the scripts/ folder and add them to this list here. You MUST add one of the following
@@ -47,5 +49,6 @@ setup(
         # #!/usr/bin/python3
         # The first one is uses the local python3 and is recommended if you run your script in
         # virtual environments. The second one always uses the global python3 interpreter.
-    ]
+    ],
+    entry_points={'crunch_etl': ['variables=ArtWork.variables']}
 )

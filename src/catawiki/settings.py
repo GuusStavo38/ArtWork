@@ -14,7 +14,6 @@ BOT_NAME = 'catawiki'
 SPIDER_MODULES = ['catawiki.spiders']
 NEWSPIDER_MODULE = 'catawiki.spiders'
 
-
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'catawiki (+http://www.yourdomain.com)'
 
@@ -27,7 +26,7 @@ ROBOTSTXT_OBEY = True
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 0.25
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -55,6 +54,9 @@ ROBOTSTXT_OBEY = True
 #DOWNLOADER_MIDDLEWARES = {
 #    'catawiki.middlewares.CatawikiDownloaderMiddleware': 543,
 #}
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy_selenium.SeleniumMiddleware': 800
+}
 
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
@@ -90,3 +92,11 @@ IMAGES_STORE = '/home/guus/GIT/HOB/ArtWork/data'
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+# Set the Selenium driver variables
+SELENIUM_DRIVER_NAME = 'chrome'
+SELENIUM_DRIVER_EXECUTABLE_PATH = '/home/guus/GIT/HOB/ArtWork/selenium/chromedriver'
+SELENIUM_DRIVER_ARGUMENTS = ['--headless']
+
+# Set the maximum depth
+MAX_DEPTH = 5
